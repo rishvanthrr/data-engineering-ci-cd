@@ -1,3 +1,16 @@
+from unittest.mock import Mock
+
+
+def test_mock_data_source():
+    mock_source = Mock()
+
+    mock_source.get_data.return_value = [10, 20, 30]
+
+    data = mock_source.get_data()
+
+    assert data == [10, 20, 30]
+
+
 def test_number_of_rows():
     data = pd.DataFrame({
         "name": ["Arun", "Priya", "Rahul"],
